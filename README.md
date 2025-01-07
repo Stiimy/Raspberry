@@ -95,5 +95,6 @@ Configurer le boot à partir d’un **lecteur USB** contenant l’image système
 ---
 
 ## ✍️ **Auteur**
-- Documenté par : **[Ton Nom]**  
-- 📧 Contact : **[Ton Email]**
+- Documenté par : **[Mr. Levan]**
+- Retranscrit par : **[Keran]**
+
