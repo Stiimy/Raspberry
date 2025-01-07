@@ -70,7 +70,53 @@ Ce projet détaille les étapes d’installation et d’administration d’un sy
      cat fichier.txt
      ```
 
-### **4. Installation d’un serveur web**
+7. 🛠️ Installer et configurer un proxy Squid :
+   ```bash
+   sudo apt install squid
+   ```
+
+### **4. Manipulation d’une clé USB**
+12. 🔌 Insérer une clé USB dans le Raspberry Pi.
+13. 📋 Copier un fichier sur la clé USB :
+    - Identifier la clé USB :
+      ```bash
+      lsblk
+      ```
+    - Monter la clé :
+      ```bash
+      sudo mount /dev/sda1 /mnt
+      ```
+    - Copier un fichier :
+      ```bash
+      cp /etc/fichier.txt /mnt/
+      ```
+14. 🔍 Vérifier le contenu et démonter la clé USB :
+    ```bash
+    ls /mnt
+    sudo umount /mnt
+    ```
+
+### **5. Gestion des permissions**
+16. 🔐 Modifier les droits d’accès à un fichier :
+    ```bash
+    chmod 755 fichier.txt
+    ```
+17. ✅ Vérifier les droits d’accès :
+    ```bash
+    ls -l fichier.txt
+    ```
+
+### **6. Transfert de fichiers avec SCP**
+18. 🔄 Copier des fichiers :
+    - PC → Raspberry Pi :
+      ```bash
+      scp fichier.txt pi@172.31.0.8:/home/pi/
+      ```
+    - Raspberry Pi → PC :
+      ```bash
+      scp pi@172.31.0.8:/home/pi/fichier.txt ./
+      ```
+      ### **5. Installation d’un serveur web**
 1. 🔒 Activer SSH et VNC dans les paramètres :
    ```bash
    sudo raspi-config
@@ -107,52 +153,6 @@ Ce projet détaille les étapes d’installation et d’administration d’un sy
      ```bash
      scp /chemin/fichier.html pi@172.31.0.8:/var/www/html/
      ```
-7. 🛠️ Installer et configurer un proxy Squid :
-   ```bash
-   sudo apt install squid
-   ```
-
-### **5. Manipulation d’une clé USB**
-12. 🔌 Insérer une clé USB dans le Raspberry Pi.
-13. 📋 Copier un fichier sur la clé USB :
-    - Identifier la clé USB :
-      ```bash
-      lsblk
-      ```
-    - Monter la clé :
-      ```bash
-      sudo mount /dev/sda1 /mnt
-      ```
-    - Copier un fichier :
-      ```bash
-      cp /etc/fichier.txt /mnt/
-      ```
-14. 🔍 Vérifier le contenu et démonter la clé USB :
-    ```bash
-    ls /mnt
-    sudo umount /mnt
-    ```
-
-### **6. Gestion des permissions**
-16. 🔐 Modifier les droits d’accès à un fichier :
-    ```bash
-    chmod 755 fichier.txt
-    ```
-17. ✅ Vérifier les droits d’accès :
-    ```bash
-    ls -l fichier.txt
-    ```
-
-### **7. Transfert de fichiers avec SCP**
-18. 🔄 Copier des fichiers :
-    - PC → Raspberry Pi :
-      ```bash
-      scp fichier.txt pi@172.31.0.8:/home/pi/
-      ```
-    - Raspberry Pi → PC :
-      ```bash
-      scp pi@172.31.0.8:/home/pi/fichier.txt ./
-      ```
 
 
 
